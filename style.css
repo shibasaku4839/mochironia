@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
+
+/* 元画像はテンプレートとして使うので非表示 */
+#shirome,
+#kurome {
+    display: none;
+}
+
+/* 目全体 */
+.eye {
+    position: absolute;
+}
+
+/* 白目 */
+.eye-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 黒目を表示する範囲 */
+.pupil-clip {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+
+    /*
+      白目の内側っぽい形に切り抜く
+      ここを調整すると見え方が変わる
+    */
+    clip-path: polygon(
+        0% 50%,
+        7% 34%,
+        18% 22%,
+        34% 12%,
+        50% 8%,
+        66% 12%,
+        82% 22%,
+        93% 34%,
+        100% 50%,
+        93% 66%,
+        82% 78%,
+        66% 88%,
+        50% 92%,
+        34% 88%,
+        18% 78%,
+        7% 66%
+    );
+}
+
+/* 黒目を動かす箱 */
+.pupil-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+}
+
+/* 黒目画像 */
+.eye-mid {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    pointer-events: none;
+}
