@@ -77,8 +77,13 @@ body {
     pointer-events: none;
 }
 
-h2 {
+h2 a {
     font-family: Hiragana Mincho Pro, serif;
     margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: red;
+    z-index: 1;
 }
