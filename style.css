@@ -76,3 +76,9 @@ body {
     object-fit: contain;
     pointer-events: none;
 }
+
+h2 {
+    font-family: Hiragana Mincho Pro, serif;
+    margin: auto;
+    color: red;
+}
